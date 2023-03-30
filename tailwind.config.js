@@ -15,7 +15,8 @@ module.exports = {
       animation: {
         fadeIn: 'fadeIn 250ms ease-out',
         fadeInLeft: 'fadeInLeft 1s ease-out',
-        fadeInScale: 'fadeInScale 250ms cubic-bezier(.17,.67,.83,.67)'
+        fadeInScale: 'fadeInScale 200ms ease-in',
+        fadeOutScale: 'fadeOutScale 200ms cubic-bezier(.17,.67,.83,.67)'
       },
       keyframes: {
         fadeIn: {
@@ -44,6 +45,16 @@ module.exports = {
           '100%': {
             opacity: '1',
             transform: 'scale(1)'
+          }
+        },
+        fadeOutScale: {
+          '0%': {
+            opacity: '1',
+            transform: 'scale(1)'
+          },
+          '100%': {
+            opacity: '0',
+            transform: 'scale(0)'
           }
         }
       }
