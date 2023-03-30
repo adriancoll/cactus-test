@@ -3,17 +3,17 @@ import { useUI } from './useUI'
 
 export const useMaterialSelector = () => {
   const {
-    toggleSideMenu,
     pointerMaterials = [],
     layers,
     currentPointer,
+    isMaterialSelectorOpen,
+
     setLayerPoint,
-    isMaterialSelectorOpen
+    closeMaterialSelector,
+    toggleMaterialSelector
   } = useUI()
 
-  const materialSelectorRef = useOutsideClick(() => {
-    toggleSideMenu()
-  })
+  const materialSelectorRef = useOutsideClick(closeMaterialSelector)
 
   const onPrevClick = () => {
     const currentIndex = pointerMaterials.findIndex(
@@ -52,5 +52,14 @@ export const useMaterialSelector = () => {
     // if it was the last select the first
     return setLayerPoint(pointerMaterials[0].layers)
   }
-  return { onNextClick, onPrevClick, materialSelectorRef, pointerMaterials, toggleSideMenu, isMaterialSelectorOpen }
+
+  return {
+    onNextClick,
+    onPrevClick,
+    materialSelectorRef,
+    pointerMaterials,
+    closeMaterialSelector,
+    isMaterialSelectorOpen,
+    toggleMaterialSelector
+  }
 }

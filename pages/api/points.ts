@@ -3,9 +3,7 @@ import { db, getCollectionData } from '@/lib'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data =
-  | {
-      data: DBPoint[]
-    }
+  | DBPoint[]
   | {
       message: string
     }
@@ -13,7 +11,7 @@ type Data =
 const getDBPoints = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const data = await getCollectionData<DBPoint>(db, 'points')
 
-  return res.status(200).json({ data })
+  return res.status(200).json(data)
 }
 
 export default function handler(
@@ -22,8 +20,7 @@ export default function handler(
 ) {
   switch (req.method) {
     case 'GET':
-      getDBPoints(req, res)
-      break
+      return getDBPoints(req, res)
 
     default:
       return res.status(400).json({ message: 'Bad Request' })

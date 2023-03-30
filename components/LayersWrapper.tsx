@@ -11,7 +11,7 @@ export const LayersWrapper = () => {
   const { layers } = useUI()
 
   return (
-    <div className='flex'>
+    <div className="flex">
       {/* material selector points */}
       {points.map((point) => (
         <CoordPoint key={point.name} point={point} />
@@ -29,7 +29,7 @@ export const LayersWrapper = () => {
         {/* Map the selected layers from ui context */}
         {Object.entries(layers).map(([pointId, image]) => (
           <Image
-            loading='eager'
+            loading="eager"
             className="absolute z-10 inset-0"
             alt={pointId}
             key={pointId}

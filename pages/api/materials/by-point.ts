@@ -1,11 +1,9 @@
 import { DBMaterial } from '@/interfaces'
-import { db, getMaterialsByPoint } from '@/lib'
+import { getMaterialsByPoint } from '@/lib'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data =
-  | {
-      data: DBMaterial[]
-    }
+  | DBMaterial[]
   | {
       message: string
     }
@@ -24,7 +22,7 @@ const getDBMaterials = async (
 
   const data = await getMaterialsByPoint(pointId)
 
-  return res.status(200).json({ data })
+  return res.status(200).json(data)
 }
 
 export default function handler(
@@ -32,9 +30,8 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   switch (req.method) {
-    case 'GET':
-      getDBMaterials(req, res)
-      break
+    case 'POST':
+      return getDBMaterials(req, res)
 
     default:
       return res.status(400).json({ message: 'Bad Request' })

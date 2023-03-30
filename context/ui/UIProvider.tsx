@@ -2,6 +2,7 @@ import { FC, PropsWithChildren, useReducer } from 'react'
 import { UiContext, uiReducer } from '.'
 import { DBMaterial, DBPoint, Layers } from '@/interfaces'
 import { getMaterialsByPoint } from '@/lib/firestore'
+import { apiInstance } from '@/services'
 
 export interface UiState {
   isMaterialSelectorOpen: boolean
@@ -21,13 +22,21 @@ export const UiProvider: FC<PropsWithChildren> = ({ children }) => {
   const [state, dispatch] = useReducer(uiReducer, UI_INITIAL_STATE)
 
   const setSelectedPoint = async (payload: DBPoint) => {
-    const materials = await getMaterialsByPoint(payload.id)
+    // const materials = await getMaterialsByPoint(payload.id)
+    const { data } = await apiInstance.post<DBMaterial[]>(
+      '/materials/by-point',
+      {
+        pointId: payload.id
+      }
+    )
 
     dispatch({ type: 'SET_SELECTED_POINT', payload })
-    dispatch({ type: 'SET_SELECTED_POINT_MATERIALS', payload: materials })
+    dispatch({ type: 'SET_SELECTED_POINT_MATERIALS', payload: data })
   }
 
-  const toggleSideMenu = () => dispatch({ type: 'TOGGLE_IS_SELECTING' })
+  const toggleMaterialSelector = () => dispatch({ type: 'TOGGLE_IS_SELECTING' })
+
+  const closeMaterialSelector = () => dispatch({ type: 'CLOSE_IS_SELECTING' })
 
   // Handle layers
   const setLayerPoint = (layer: Layers) =>
@@ -40,8 +49,9 @@ export const UiProvider: FC<PropsWithChildren> = ({ children }) => {
 
         // actions
         setSelectedPoint,
-        toggleSideMenu,
-        setLayerPoint
+        toggleMaterialSelector,
+        setLayerPoint,
+        closeMaterialSelector
       }}
     >
       {children}

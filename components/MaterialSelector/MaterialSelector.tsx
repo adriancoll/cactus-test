@@ -9,7 +9,7 @@ export const MaterialSelector = () => {
     onPrevClick,
     materialSelectorRef,
     pointerMaterials,
-    toggleSideMenu,
+    closeMaterialSelector,
     isMaterialSelectorOpen
   } = useMaterialSelector()
 
@@ -25,7 +25,7 @@ export const MaterialSelector = () => {
       <div
         title="Close material selector"
         className="hover:rotate-3 transition hover:bg-white/10 rounded-full hover:shadow-lg p-2 text-white cursor-pointer absolute top-2 right-2"
-        onClick={toggleSideMenu}
+        onClick={closeMaterialSelector}
       >
         <CloseIcon />
       </div>

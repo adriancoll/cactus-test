@@ -7,9 +7,13 @@ interface ContextProps {
   pointerMaterials?: DBMaterial[]
   layers: Layers
 
+  // Points
   setSelectedPoint: (point: DBPoint) => Promise<void>
-  toggleSideMenu: () => void
   setLayerPoint: (layer: Layers) => void
+
+  // Material selector
+  toggleMaterialSelector: () => void
+  closeMaterialSelector: () => void
 }
 
 export const UiContext = createContext({} as ContextProps)
