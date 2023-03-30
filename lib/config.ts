@@ -8,6 +8,4 @@ const config = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID as string
 }
 
-console.log({ config })
-
 export default config
