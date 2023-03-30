@@ -20,7 +20,7 @@ export const MaterialSelector = () => {
   return (
     <div
       ref={materialSelectorRef}
-      className={`transition bg-primary/30 backdrop-blur-lg shadow-xl animate-fadeIn z-[9999] md:px-10 px-2 fixed right-0 top-0 bottom-0 w-fit lg:min-w-[450px] ${animationClass}`}
+      className={`transition bg-primary/30 backdrop-blur-lg shadow-xl animate-fadeIn z-[9999] md:px-10 px-2 fixed right-0 top-0 bottom-0 lg:w-1/6 md:w-1/3 lg:min-w-[450px] ${animationClass}`}
     >
       <div
         title="Close material selector"
