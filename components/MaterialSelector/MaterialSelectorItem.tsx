@@ -26,7 +26,7 @@ export const MaterialSelectorItem: FC<Props> = ({ material }) => {
       className="flex cursor-pointer hover:shadow-xl transition max-w-lg rounded justify-between items-center gap-2 bg-white  p-1"
     >
       {isSelected && (
-        <p className="text-primary animate-fadeIn text-center  break-words w-52 px-5">
+        <p className="text-primary font-semibold animate-fadeIn text-center  break-words w-52 px-5">
           {material.name}
         </p>
       )}
