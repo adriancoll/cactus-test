@@ -33,8 +33,6 @@ export const FirestoreProvider: FC<PropsWithChildren> = ({ children }) => {
         getCollectionData<DBPoint>(db, 'points')
       ])
 
-      console.log({ materials })
-
       dispatch({ type: 'SET_MATERIALS', payload: materials })
       dispatch({ type: 'SET_POINTS', payload: points })
       dispatch({ type: 'SET_LOADING', payload: false })
