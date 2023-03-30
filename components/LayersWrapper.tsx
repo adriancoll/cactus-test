@@ -29,6 +29,7 @@ export const LayersWrapper = () => {
         {/* Map the selected layers from ui context */}
         {Object.entries(layers).map(([pointId, image]) => (
           <Image
+            loading='eager'
             className="absolute z-10 inset-0"
             alt={pointId}
             key={pointId}
