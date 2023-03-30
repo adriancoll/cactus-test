@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fade-out {
+    transition: opacity 2s ease-in-out;
+    opacity: 1;
+}
+
+.fade-out.hidden {
+    opacity: 0;
+}

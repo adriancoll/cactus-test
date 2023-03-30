@@ -4,21 +4,24 @@ import { useFirestore } from '@/hooks/useFirestore'
 export default function Home() {
   const { loading } = useFirestore()
 
-  if (loading) {
-    return (
-      <div className="h-screen bg-primary flex items-center justify-center">
-        <p className="text-center animate-fadeIn text-3xl font-bold text-white">Loading...</p>
-      </div>
-    )
-  }
-
   return (
-    <Layout>
-      <main className="container pt-40 h-screen mx-auto">
-        <div className="relative">
-          <LayersWrapper />
-        </div>
-      </main>
-    </Layout>
+    <>
+      <div
+        className={`${
+          loading ? '' : 'hidden'
+        } fade-out bg-black/80 flex items-center justify-center backdrop-blur-lg absolute z-50 inset-0`}
+      >
+        <p className="text-center text-primary animate-fadeIn text-6xl font-extrabold ">
+          Loading...
+        </p>
+      </div>
+      <Layout>
+        <main className="container pt-40 h-screen mx-auto">
+          <div className="relative">
+            <LayersWrapper />
+          </div>
+        </main>
+      </Layout>
+    </>
   )
 }
