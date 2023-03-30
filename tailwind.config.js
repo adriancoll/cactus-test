@@ -13,9 +13,19 @@ module.exports = {
         base: "url('/images/base.jpeg')"
       },
       animation: {
-        fadeInLeft: 'fadeInLeft 1s ease-out'
+        fadeIn: 'fadeIn 250ms ease-out',
+        fadeInLeft: 'fadeInLeft 1s ease-out',
+        fadeInScale: 'fadeInScale 250ms cubic-bezier(.17,.67,.83,.67)'
       },
       keyframes: {
+        fadeIn: {
+          '0%': {
+            opacity: '0'
+          },
+          '100%': {
+            opacity: '1'
+          }
+        },
         fadeInLeft: {
           '0%': {
             opacity: '0',
@@ -24,6 +34,16 @@ module.exports = {
           '100%': {
             opacity: '1',
             transform: 'translateX(0)'
+          }
+        },
+        fadeInScale: {
+          '0%': {
+            opacity: '0',
+            transform: 'scale(0)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'scale(1)'
           }
         }
       }
