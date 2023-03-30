@@ -23,8 +23,6 @@ export const UiProvider: FC<PropsWithChildren> = ({ children }) => {
   const setSelectedPoint = async (payload: DBPoint) => {
     const materials = await getMaterialsByPoint(payload.id)
 
-    console.log({ materials })
-
     dispatch({ type: 'SET_SELECTED_POINT', payload })
     dispatch({ type: 'SET_SELECTED_POINT_MATERIALS', payload: materials })
   }

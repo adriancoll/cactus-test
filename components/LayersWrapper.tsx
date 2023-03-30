@@ -8,8 +8,6 @@ const IMAGE_HEIGHT = 873
 export const LayersWrapper = () => {
   const { layers } = useUI()
 
-  console.log({ test: Object.entries(layers) })
-
   return (
     <div className="rounded-lg relative ">
       <Image
