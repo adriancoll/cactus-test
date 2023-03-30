@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
 import { DBMaterial } from '@/interfaces'
 
@@ -11,6 +11,7 @@ interface Props {
 
 export const MaterialSelectorItem: FC<Props> = ({ material }) => {
   const { setLayerPoint, currentPointer, layers } = useUI()
+  const [isMouseOver, setIsMouseOver] = useState(false)
 
   const handleClick = () => {
     setLayerPoint(material.layers)
@@ -22,18 +23,23 @@ export const MaterialSelectorItem: FC<Props> = ({ material }) => {
 
   return (
     <div
+      onMouseEnter={() => setIsMouseOver(true)}
+      onMouseLeave={() => setIsMouseOver(false)}
+      onFocus={() => setIsMouseOver(true)}
       onClick={handleClick}
-      className="flex cursor-pointer hover:shadow-xl transition max-w-lg rounded justify-between items-center gap-2 bg-white  p-1"
+      className="flex cursor-pointer hover:shadow-xl transition max-w-lg rounded-lg justify-between items-center gap-2 bg-white  p-1"
     >
-      {isSelected && (
-        <p className="text-primary font-semibold animate-fadeIn text-center  break-words w-52 px-5">
-          {material.name}
-        </p>
-      )}
-      <div className="object-contain rounded w-32 h-32 border-[1px] border-gray-200 shadow overflow-hidden">
+      <p
+        className={`text-primary font-semibold animate-fadeIn text-center transition break-words w-52 px-5 ${
+          isSelected || isMouseOver ? '' : 'w-0 hidden'
+        }`}
+      >
+        {material.name}
+      </p>
+      <div className="object-contain rounded-lg w-36 h-36 border-[1px] border-gray-200 overflow-hidden">
         <Image
-          width={150}
-          height={150}
+          width={144}
+          height={144}
           src={material.materialPreview}
           alt={`${material.name} material`}
         />
