@@ -9,7 +9,7 @@ export const LayersWrapper = () => {
   const { layers } = useUI()
 
   return (
-    <div className="rounded-lg relative ">
+    <div className="rounded-3xl relative overflow-hidden">
       <Image
         className="select-none object-contain pointer-events-none"
         priority
