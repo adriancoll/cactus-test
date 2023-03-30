@@ -9,7 +9,7 @@ export const MaterialSelector = () => {
   return (
     <div
       ref={materialSelectorRef}
-      className="bg-primary animate-fadeIn z-[9999] px-10 fixed right-0 top-0 bottom-0 w-fit min-w-[300px]"
+      className="bg-primary shadow-xl animate-fadeIn z-[9999] px-10 fixed right-0 top-0 bottom-0 w-fit min-w-[450px]"
     >
       <div
         onClick={onPrevClick}
@@ -19,7 +19,11 @@ export const MaterialSelector = () => {
       </div>
       <ul className="list-none pt-52 flex flex-col items-end gap-5">
         {pointerMaterials.map((material) => (
-          <li className="flex justify-center" key={material.id}>
+          <li
+            title={`Use ${material.name} material`}
+            className="flex justify-center"
+            key={material.id}
+          >
             <MaterialSelectorItem material={material} />
           </li>
         ))}
