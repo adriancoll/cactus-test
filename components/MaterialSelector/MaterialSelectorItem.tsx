@@ -1,25 +1,26 @@
-import { useUI } from '@/hooks/useUI'
-import { DBMaterial } from '@/interfaces'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
+
+import { DBMaterial } from '@/interfaces'
+
+import { useUI } from '@/hooks/useUI'
 
 interface Props {
   material: DBMaterial
-  isSelected: boolean
   onClick: () => void
 }
 
-export const SideMenuItem: FC<Props> = ({
-  material,
-  isSelected = false,
-  onClick
-}) => {
-  const { setLayerPoint } = useUI()
+export const MaterialSelectorItem: FC<Props> = ({ material, onClick }) => {
+  const { setLayerPoint, currentPointer, layers } = useUI()
 
   const handleClick = () => {
     onClick()
     setLayerPoint(material.layers)
   }
+
+  // If current point layer is equal to the MaterialSelector then is selected
+  const isSelected =
+    layers[currentPointer.id] === material.layers[currentPointer.id]
 
   return (
     <div

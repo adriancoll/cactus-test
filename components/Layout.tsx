@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from 'react'
-import { SideMenu } from '.'
+import { MaterialSelector } from '@/components/MaterialSelector'
 import { useUI } from '@/hooks/useUI'
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => {
@@ -7,7 +7,7 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <div className="w-full relative h-screen bg-primary">
-      {isSideMenuOpen && <SideMenu />}
+      {isSideMenuOpen && <MaterialSelector />}
       {children}
     </div>
   )

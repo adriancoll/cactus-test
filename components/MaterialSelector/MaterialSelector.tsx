@@ -1,18 +1,11 @@
 import { useOutsideClick } from '@/hooks/useOutsideClick'
 import { useUI } from '@/hooks/useUI'
-import { SideMenuItem } from './SideMenuItem'
+import { MaterialSelectorItem } from './MaterialSelectorItem'
 import { useState } from 'react'
-import { ChevronUp, ChevronDown } from './icons'
-import { useFirestore } from '@/hooks/useFirestore'
-import { DBMaterial } from '@/interfaces'
+import { ChevronUp, ChevronDown } from '../icons'
 
-export const SideMenu = () => {
-  const {
-    toggleSideMenu,
-    pointerMaterials = [],
-    layers,
-    setLayerPoint
-  } = useUI()
+export const MaterialSelector = () => {
+  const { toggleSideMenu, pointerMaterials = [] } = useUI()
   const [selectedItem, setSelectedItem] = useState('')
 
   const sideMenuRef = useOutsideClick(() => {
@@ -30,7 +23,7 @@ export const SideMenu = () => {
       <ul className="list-none py-24 flex flex-col items-end gap-5">
         {pointerMaterials.map((material) => (
           <li className="flex justify-center" key={material.id}>
-            <SideMenuItem
+            <MaterialSelectorItem
               onClick={() => setSelectedItem(material.id)}
               material={material}
               isSelected={selectedItem === material.id}
