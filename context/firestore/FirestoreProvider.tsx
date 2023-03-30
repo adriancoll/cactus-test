@@ -1,12 +1,12 @@
 import { FC, PropsWithChildren, useEffect, useReducer } from 'react'
 import { firestoreReducer } from './firestoreReducer'
 import { FirestoreContext } from './FirestoreContext'
-import { Materials, Points } from '@/interfaces'
+import { DBMaterial, DBPoint } from '@/interfaces'
 import { db, getCollectionData } from '@/lib'
 
 export interface FirestoreState {
-  points: Points[]
-  materials: Materials[]
+  points: DBPoint[]
+  materials: DBMaterial[]
 
   loading: boolean
 }
@@ -26,13 +26,18 @@ export const FirestoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      dispatch({ type: 'SET_LOADING', payload: true })
+
       const [materials, points] = await Promise.all([
-        getCollectionData<Materials>(db, 'materials'),
-        getCollectionData<Points>(db, 'points')
+        getCollectionData<DBMaterial>(db, 'materials'),
+        getCollectionData<DBPoint>(db, 'points')
       ])
+
+      console.log({ materials })
 
       dispatch({ type: 'SET_MATERIALS', payload: materials })
       dispatch({ type: 'SET_POINTS', payload: points })
+      dispatch({ type: 'SET_LOADING', payload: false })
     }
     fetchData()
   }, [])

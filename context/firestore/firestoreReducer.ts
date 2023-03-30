@@ -1,9 +1,9 @@
-import { Materials, Points } from '@/interfaces'
+import { DBMaterial, DBPoint } from '@/interfaces'
 import { FirestoreState } from './FirestoreProvider'
 
 type FirestoreAction =
-  | { type: 'SET_POINTS'; payload: Points[] }
-  | { type: 'SET_MATERIALS'; payload: Materials[] }
+  | { type: 'SET_POINTS'; payload: DBPoint[] }
+  | { type: 'SET_MATERIALS'; payload: DBMaterial[] }
   | { type: 'SET_LOADING'; payload: boolean }
 
 export const firestoreReducer = (
