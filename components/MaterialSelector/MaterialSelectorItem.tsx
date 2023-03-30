@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 
 import { DBMaterial } from '@/interfaces'
 
@@ -7,14 +7,12 @@ import { useUI } from '@/hooks/useUI'
 
 interface Props {
   material: DBMaterial
-  onClick: () => void
 }
 
-export const MaterialSelectorItem: FC<Props> = ({ material, onClick }) => {
+export const MaterialSelectorItem: FC<Props> = ({ material }) => {
   const { setLayerPoint, currentPointer, layers } = useUI()
 
   const handleClick = () => {
-    onClick()
     setLayerPoint(material.layers)
   }
 

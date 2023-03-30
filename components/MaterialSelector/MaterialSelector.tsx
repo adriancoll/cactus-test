@@ -6,7 +6,6 @@ import { ChevronUp, ChevronDown } from '../icons'
 
 export const MaterialSelector = () => {
   const { toggleSideMenu, pointerMaterials = [] } = useUI()
-  const [selectedItem, setSelectedItem] = useState('')
 
   const sideMenuRef = useOutsideClick(() => {
     toggleSideMenu()
@@ -23,11 +22,7 @@ export const MaterialSelector = () => {
       <ul className="list-none py-24 flex flex-col items-end gap-5">
         {pointerMaterials.map((material) => (
           <li className="flex justify-center" key={material.id}>
-            <MaterialSelectorItem
-              onClick={() => setSelectedItem(material.id)}
-              material={material}
-              isSelected={selectedItem === material.id}
-            />
+            <MaterialSelectorItem material={material} />
           </li>
         ))}
       </ul>
