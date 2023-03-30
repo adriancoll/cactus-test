@@ -2,7 +2,7 @@ import { DBMaterial, DBPoint, Layers } from '@/interfaces'
 import { createContext } from 'react'
 
 interface ContextProps {
-  isSideMenuOpen: boolean
+  isMaterialSelectorOpen: boolean
   currentPointer: DBPoint
   pointerMaterials?: DBMaterial[]
   layers: Layers

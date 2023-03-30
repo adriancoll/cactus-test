@@ -4,14 +4,14 @@ import { DBMaterial, DBPoint, Layers } from '@/interfaces'
 import { getMaterialsByPoint } from '@/lib/firestore'
 
 export interface UiState {
-  isSideMenuOpen: boolean
+  isMaterialSelectorOpen: boolean
   currentPointer: DBPoint
   pointerMaterials: DBMaterial[]
   layers: Layers
 }
 
 const UI_INITIAL_STATE: UiState = {
-  isSideMenuOpen: false,
+  isMaterialSelectorOpen: false,
   currentPointer: {} as DBPoint,
   pointerMaterials: [],
   layers: {} as Layers

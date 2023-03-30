@@ -7,7 +7,8 @@ export const useMaterialSelector = () => {
     pointerMaterials = [],
     layers,
     currentPointer,
-    setLayerPoint
+    setLayerPoint,
+    isMaterialSelectorOpen
   } = useUI()
 
   const materialSelectorRef = useOutsideClick(() => {
@@ -51,5 +52,5 @@ export const useMaterialSelector = () => {
     // if it was the last select the first
     return setLayerPoint(pointerMaterials[0].layers)
   }
-  return { onNextClick, onPrevClick, materialSelectorRef, pointerMaterials, toggleSideMenu }
+  return { onNextClick, onPrevClick, materialSelectorRef, pointerMaterials, toggleSideMenu, isMaterialSelectorOpen }
 }

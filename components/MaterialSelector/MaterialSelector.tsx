@@ -9,15 +9,24 @@ export const MaterialSelector = () => {
     onPrevClick,
     materialSelectorRef,
     pointerMaterials,
-    toggleSideMenu
+    toggleSideMenu,
+    isMaterialSelectorOpen
   } = useMaterialSelector()
+
+  const animationClass = isMaterialSelectorOpen
+    ? 'translate-x-0'
+    : 'translate-x-full'
 
   return (
     <div
       ref={materialSelectorRef}
-      className="bg-primary/30 backdrop-blur-lg shadow-xl animate-fadeIn z-[9999] md:px-10 px-2 fixed right-0 top-0 bottom-0 w-fit lg:min-w-[450px]"
+      className={`transition bg-primary/30 backdrop-blur-lg shadow-xl animate-fadeIn z-[9999] md:px-10 px-2 fixed right-0 top-0 bottom-0 w-fit lg:min-w-[450px] ${animationClass}`}
     >
-      <div title='Close material selector' className='hover:rotate-3 transition hover:bg-white/10 rounded-full hover:shadow-lg p-2 text-white cursor-pointer absolute top-2 right-2' onClick={toggleSideMenu}>
+      <div
+        title="Close material selector"
+        className="hover:rotate-3 transition hover:bg-white/10 rounded-full hover:shadow-lg p-2 text-white cursor-pointer absolute top-2 right-2"
+        onClick={toggleSideMenu}
+      >
         <CloseIcon />
       </div>
       <div
@@ -28,11 +37,7 @@ export const MaterialSelector = () => {
       </div>
       <ul className="list-none pt-52 flex flex-col items-end gap-5">
         {pointerMaterials.map((material) => (
-          <li
-            title={`Use ${material.name} material`}
-            className="flex justify-center"
-            key={material.id}
-          >
+          <li className="flex justify-center" key={material.id}>
             <MaterialSelectorItem material={material} />
           </li>
         ))}

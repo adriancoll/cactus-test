@@ -12,17 +12,17 @@ export const uiReducer = (state: UiState, action: UiActionType): UiState => {
     case 'TOGGLE_IS_SELECTING':
       return {
         ...state,
-        isSideMenuOpen: !state.isSideMenuOpen
+        isMaterialSelectorOpen: !state.isMaterialSelectorOpen
       }
     case 'SET_SELECTED_POINT':
-      if (!state.isSideMenuOpen) state.isSideMenuOpen = true
+      if (!state.isMaterialSelectorOpen) state.isMaterialSelectorOpen = true
 
       return {
         ...state,
         currentPointer: action.payload
       }
     case 'SET_SELECTED_POINT_MATERIALS':
-      if (!state.isSideMenuOpen) state.isSideMenuOpen = true
+      if (!state.isMaterialSelectorOpen) state.isMaterialSelectorOpen = true
       return {
         ...state,
         pointerMaterials: action.payload
