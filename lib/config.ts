@@ -1,10 +1,13 @@
 const config = {
-  apiKey: 'AIzaSyC_JwpXS4uj9sRRDrbFAtalE1QulNTmKnw',
-  authDomain: 'visualizer-new-devs-test.firebaseapp.com',
-  projectId: 'visualizer-new-devs-test',
-  storageBucket: 'visualizer-new-devs-test.appspot.com',
-  messagingSenderId: '702664185241',
-  appId: '1:702664185241:web:580752c50d570d0c89ef08'
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY as string,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN as string,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID as string,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET as string,
+  messagingSenderId: process.env
+    .NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID as string,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID as string
 }
+
+console.log({ config })
 
 export default config
