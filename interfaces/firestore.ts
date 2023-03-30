@@ -7,6 +7,8 @@ export type FirestoreDocument = {
 
 export type PointTypes = 'Pavimento' | 'Frente' | 'Encimera' | 'Entrepaños'
 
+export type Layers = { [x: string]: string }
+
 export interface DBPoint {
   id: string
   coordX: number
@@ -16,7 +18,7 @@ export interface DBPoint {
 
 export interface DBMaterial {
   id: string
-  layers: { [x: string]: string }
+  layers: Layers
   materialPreview: string
   name: string
   points: string[]

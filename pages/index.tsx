@@ -1,29 +1,28 @@
-import { Layout } from '@/components'
+import { Layout, LayersWrapper } from '@/components'
 import { CoordPoint } from '@/components/CoordPoint'
 import { useFirestore } from '@/hooks/useFirestore'
-import Image from 'next/image'
+import { useUI } from '@/hooks/useUI'
 
 export default function Home() {
+  const { layers } = useUI()
   const { points, loading } = useFirestore()
 
   if (loading) {
-    return <p className="text-center text-3xl font-bold">Loading...</p>
+    return (
+      <div className="h-screen bg-primary flex items-center justify-center">
+        <p className="text-center text-3xl font-bold text-white">Loading...</p>
+      </div>
+    )
   }
 
   return (
     <Layout>
       <main className="container mx-auto pt-20">
-        <div className="rounded-lg relative overflow-hidden">
+        <div className="relative">
           {points.map((point) => (
             <CoordPoint key={point.name} point={point} />
           ))}
-          <Image
-            priority
-            width={1250}
-            height={873}
-            src="/images/base.jpeg"
-            alt="Base image"
-          />
+          <LayersWrapper />
         </div>
       </main>
     </Layout>
