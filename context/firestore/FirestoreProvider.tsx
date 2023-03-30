@@ -2,7 +2,6 @@ import { FC, PropsWithChildren, useEffect, useReducer } from 'react'
 import { firestoreReducer } from './firestoreReducer'
 import { FirestoreContext } from './FirestoreContext'
 import { DBMaterial, DBPoint } from '@/interfaces'
-import { db, getCollectionData } from '@/lib'
 import { apiInstance } from '@/services'
 
 export interface FirestoreState {

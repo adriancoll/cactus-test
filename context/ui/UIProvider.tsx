@@ -1,7 +1,6 @@
 import { FC, PropsWithChildren, useReducer } from 'react'
 import { UiContext, uiReducer } from '.'
 import { DBMaterial, DBPoint, Layers } from '@/interfaces'
-import { getMaterialsByPoint } from '@/lib/firestore'
 import { apiInstance } from '@/services'
 
 export interface UiState {
