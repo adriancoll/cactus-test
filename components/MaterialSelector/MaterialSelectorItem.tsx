@@ -30,7 +30,7 @@ export const MaterialSelectorItem: FC<Props> = ({ material }) => {
           {material.name}
         </p>
       )}
-      <div className="object-contain rounded overflow-hidden">
+      <div className="object-contain rounded w-32 h-32 border-[1px] border-gray-200 shadow overflow-hidden">
         <Image
           width={150}
           height={150}
