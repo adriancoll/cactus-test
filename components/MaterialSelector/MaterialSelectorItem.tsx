@@ -39,7 +39,7 @@ export const MaterialSelectorItem: FC<Props> = ({ material }) => {
       <div className="object-contain rounded-lg w-36 h-36 border-[1px] border-gray-200 overflow-hidden">
         <Image
           placeholder="blur"
-          loading='eager'
+          loading='lazy'
           blurDataURL='/images/placeholder.webp'
           width={144}
           height={144}
