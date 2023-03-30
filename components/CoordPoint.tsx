@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const CoordPoint: FC<Props> = ({ point }) => {
-  const { setSelectedPoint } = useUI()
+  const { setSelectedPoint, isSideMenuOpen } = useUI()
 
   const onClick = () => setSelectedPoint(point)
 
@@ -20,7 +20,9 @@ export const CoordPoint: FC<Props> = ({ point }) => {
       }}
       title={`Seleccionar ${point.name}`}
       onClick={onClick}
-      className="animate-fadeInScale group hover:opacity-40 transition absolute p-1 cursor-pointer rounded-full bg-black/50 z-30"
+      className={`${
+        isSideMenuOpen ? 'invisible' : 'visible animate-fadeInScale'
+      }  group hover:opacity-40 transition absolute p-1 cursor-pointer rounded-full bg-black/50 z-30`}
     >
       <div className="group-hover:scale-125 transition border-2 text-white rotate-12 border-white p-2 rounded-full">
         <FingerPrint />
