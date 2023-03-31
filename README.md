@@ -12,20 +12,30 @@ To run this project locally, follow these steps:
   git clone https://github.com/<your-username>/studio-cactus-tech-test.git
 ```
 
-2. Install the dependencies:
+2. Copy and paste the `.env.template` and rename it to `.env` and set your firebase credentials.
+
+3. Install the dependencies:
 
 ```bash
   cd studio-cactus-tech-test
   npm install
 ```
 
-3. Start the development server:
+4. Start the development server:
 
 ```bash
   npm run dev
 ```
 
 The project should now be running on http://localhost:3000.
+
+## Linting 
+
+To lint the code i have installed ESLint with StandardJS, soo simply go with:
+
+```bash
+  npm run lint
+```
 
 ## Contributing
 
@@ -62,3 +72,5 @@ This project demonstrates the use of NextJS, TailwindCSS, and Firestore to creat
   - [✔️] Handle click on each material card
   - [✔️] Store in context
   - [✔️] Get the selected material by point
+- [✔️] 🔥 Move firestore to next backend
+- [✔️] 📁 Change current project to Clean HEX Architecture
