@@ -1,4 +1,4 @@
-import { DBMaterial, DBPoint } from '@/interfaces'
+import { DBMaterial, DBPoint } from '@/models'
 import { createContext } from 'react'
 
 interface ContextProps {

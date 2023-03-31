@@ -1,6 +1,8 @@
-import { DBMaterial } from '@/interfaces'
-import { db, getCollectionData } from '@/lib'
+import { DBMaterial } from '@/models'
+import { db } from '@/lib'
 import type { NextApiRequest, NextApiResponse } from 'next'
+
+import { getCollectionData } from '@/lib/firebase'
 
 type Data =
   | DBMaterial[]

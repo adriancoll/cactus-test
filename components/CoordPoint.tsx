@@ -1,4 +1,4 @@
-import { DBPoint } from '@/interfaces'
+import { DBPoint } from '@/models'
 import { FC } from 'react'
 import { FingerPrint } from './icons'
 import { useUI } from '@/hooks/useUI'

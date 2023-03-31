@@ -1,1 +1,1 @@
-export { db, getCollectionData, getMaterialsByPoint } from './firestore'
+export * from './firebase'

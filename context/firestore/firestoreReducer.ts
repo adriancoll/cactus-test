@@ -1,4 +1,4 @@
-import { DBMaterial, DBPoint } from '@/interfaces'
+import { DBMaterial, DBPoint } from '@/models'
 import { FirestoreState } from './FirestoreProvider'
 
 type FirestoreAction =

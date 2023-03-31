@@ -1,12 +1,33 @@
-import { DBMaterial } from '@/interfaces'
-import { getMaterialsByPoint } from '@/lib'
+import { collection, getDocs, query, where } from 'firebase/firestore/lite'
 import type { NextApiRequest, NextApiResponse } from 'next'
+
+import { DBMaterial } from '@/models'
+
+import { db } from '@/lib'
 
 type Data =
   | DBMaterial[]
   | {
       message: string
     }
+
+const getMaterialsByPoint = async (pointId: string) => {
+  const materialsRef = collection(db, 'materials')
+
+  const q = query(materialsRef, where('points', '==', [pointId]))
+  const querySnapshot = await getDocs(q)
+
+  const materials: DBMaterial[] = []
+
+  // Iteramos sobre los resultados de la consulta y agregamos cada material a un arreglo
+  querySnapshot.forEach((doc) => {
+    const material = doc.data() as DBMaterial
+    material.id = doc.id
+    materials.push(material)
+  })
+
+  return materials
+}
 
 const getDBMaterials = async (
   req: NextApiRequest,

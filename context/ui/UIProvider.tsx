@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, useReducer } from 'react'
 import { UiContext, uiReducer } from '.'
-import { DBMaterial, DBPoint, Layers } from '@/interfaces'
+import { DBMaterial, DBPoint, Layers } from '@/models'
 import { apiInstance } from '@/services'
 
 export interface UiState {
@@ -21,7 +21,6 @@ export const UiProvider: FC<PropsWithChildren> = ({ children }) => {
   const [state, dispatch] = useReducer(uiReducer, UI_INITIAL_STATE)
 
   const setSelectedPoint = async (payload: DBPoint) => {
-    // const materials = await getMaterialsByPoint(payload.id)
     const { data } = await apiInstance.post<DBMaterial[]>(
       '/materials/by-point',
       {

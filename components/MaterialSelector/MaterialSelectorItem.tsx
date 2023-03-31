@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { FC, useState } from 'react'
 
-import { DBMaterial } from '@/interfaces'
+import { DBMaterial } from '@/models'
 
 import { useUI } from '@/hooks/useUI'
 
