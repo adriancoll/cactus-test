@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { db, getCollectionData } from '@/lib'
+import { db } from '@/lib/firebase'
 import { DBPoint } from '@/lib/models'
+import { getCollectionData } from '@/lib/helpers'
 
 type Data =
   | DBPoint[]

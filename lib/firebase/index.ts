@@ -1,2 +1,1 @@
-export { db } from './firestore'
-export { getCollectionData } from './helper'
+export { db } from './db'

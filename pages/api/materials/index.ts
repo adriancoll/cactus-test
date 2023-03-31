@@ -2,7 +2,7 @@ import { DBMaterial } from '@/lib/models'
 import { db } from '@/lib'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { getCollectionData } from '@/lib/firebase'
+import { getCollectionData } from '@/lib/helpers'
 
 type Data =
   | DBMaterial[]
