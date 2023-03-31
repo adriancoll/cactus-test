@@ -15,7 +15,7 @@ export const MaterialSelector = () => {
 
   const animationClass = isMaterialSelectorOpen
     ? 'translate-x-0'
-    : 'translate-x-full'
+    : 'translate-x-[1000px]'
 
   return (
     <div
