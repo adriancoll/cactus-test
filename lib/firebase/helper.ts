@@ -1,4 +1,4 @@
-import { ModelNames } from '@/models'
+import { ModelNames } from '@/lib/models'
 import { Firestore, collection, getDocs } from 'firebase/firestore/lite'
 
 export const getCollectionData = async <T>(

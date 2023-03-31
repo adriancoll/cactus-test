@@ -1,4 +1,4 @@
 import { useContext } from 'react'
-import { UiContext } from '@/context'
+import { UiContext } from '@/lib/context'
 
 export const useUI = () => useContext(UiContext)

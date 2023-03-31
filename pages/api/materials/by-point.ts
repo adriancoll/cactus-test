@@ -1,7 +1,7 @@
 import { collection, getDocs, query, where } from 'firebase/firestore/lite'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { DBMaterial } from '@/models'
+import { DBMaterial } from '@/lib/models'
 
 import { db } from '@/lib'
 

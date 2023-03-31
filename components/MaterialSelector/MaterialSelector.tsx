@@ -1,6 +1,6 @@
 import { MaterialSelectorItem } from './MaterialSelectorItem'
 import { ChevronUp, ChevronDown } from '../icons'
-import { useMaterialSelector } from '@/hooks'
+import { useMaterialSelector } from '@/lib/hooks'
 import { CloseIcon } from '../icons/Chevrons'
 
 export const MaterialSelector = () => {

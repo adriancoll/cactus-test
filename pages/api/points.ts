@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { db, getCollectionData } from '@/lib'
-import { DBPoint } from '@/models'
+import { DBPoint } from '@/lib/models'
 
 type Data =
   | DBPoint[]

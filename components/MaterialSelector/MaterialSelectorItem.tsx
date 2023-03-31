@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import { FC, useState } from 'react'
 
-import { DBMaterial } from '@/models'
+import { DBMaterial } from '@/lib/models'
 
-import { useUI } from '@/hooks/useUI'
+import { useUI } from '@/lib/hooks/useUI'
 
 interface Props {
   material: DBMaterial

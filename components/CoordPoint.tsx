@@ -1,7 +1,7 @@
-import { DBPoint } from '@/models'
+import { DBPoint } from '@/lib/models'
 import { FC } from 'react'
 import { FingerPrint } from './icons'
-import { useUI } from '@/hooks/useUI'
+import { useUI } from '@/lib/hooks/useUI'
 
 interface Props {
   point: DBPoint

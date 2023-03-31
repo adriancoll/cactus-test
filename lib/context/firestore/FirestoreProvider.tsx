@@ -1,8 +1,8 @@
 import { FC, PropsWithChildren, useEffect, useReducer } from 'react'
 import { firestoreReducer } from './firestoreReducer'
 import { FirestoreContext } from './FirestoreContext'
-import { DBMaterial, DBPoint } from '@/models'
-import { apiInstance } from '@/services'
+import { DBMaterial, DBPoint } from '@/lib/models'
+import { apiInstance } from '@/lib/services'
 
 export interface FirestoreState {
   points: DBPoint[]

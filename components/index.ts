@@ -1,5 +1,4 @@
-export { Layout } from './Layout'
-export { LayersWrapper } from './LayersWrapper'
+export * from './Layouts'
 
 // Side Menu
-export { MaterialSelectorItem as SideMenuItem } from './MaterialSelector/MaterialSelectorItem'
+export { MaterialSelectorItem } from './MaterialSelector/MaterialSelectorItem'

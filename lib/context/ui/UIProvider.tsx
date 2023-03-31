@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren, useReducer } from 'react'
 import { UiContext, uiReducer } from '.'
-import { DBMaterial, DBPoint, Layers } from '@/models'
-import { apiInstance } from '@/services'
+import { DBMaterial, DBPoint, Layers } from '@/lib/models'
+import { apiInstance } from '@/lib/services'
 
 export interface UiState {
   isMaterialSelectorOpen: boolean

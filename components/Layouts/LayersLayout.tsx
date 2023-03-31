@@ -1,7 +1,7 @@
-import { useUI } from '@/hooks/useUI'
+import { useUI } from '@/lib/hooks/useUI'
 import Image from 'next/image'
-import { CoordPoint } from './CoordPoint'
-import { useFirestore } from '@/hooks/useFirestore'
+import { CoordPoint } from '../CoordPoint'
+import { useFirestore } from '@/lib/hooks/useFirestore'
 
 const IMAGE_WIDTH = 1240
 const IMAGE_HEIGHT = 873

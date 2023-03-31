@@ -1,4 +1,4 @@
-import { DBMaterial, DBPoint, Layers } from '@/models'
+import { DBMaterial, DBPoint, Layers } from '@/lib/models'
 import { UiState } from './'
 
 type UiActionType =

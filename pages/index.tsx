@@ -1,5 +1,5 @@
 import { Layout, LayersWrapper } from '@/components'
-import { useFirestore } from '@/hooks/useFirestore'
+import { useFirestore } from '@/lib/hooks/useFirestore'
 
 export default function Home() {
   const { loading } = useFirestore()

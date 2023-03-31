@@ -1,4 +1,4 @@
-import { DBMaterial } from '@/models'
+import { DBMaterial } from '@/lib/models'
 import { db } from '@/lib'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
