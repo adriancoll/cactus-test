@@ -2,8 +2,10 @@ import { useEffect, useRef, MutableRefObject } from 'react'
 
 type Callback = () => void
 
-export const useOutsideClick = (callback: Callback): MutableRefObject<any> => {
-  const ref = useRef<any>()
+export const useOutsideClick = <T extends HTMLElement>(
+  callback: Callback
+): MutableRefObject<any> => {
+  const ref = useRef<T>()
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {

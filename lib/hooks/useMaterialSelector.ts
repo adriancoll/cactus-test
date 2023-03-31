@@ -13,7 +13,8 @@ export const useMaterialSelector = () => {
     toggleMaterialSelector
   } = useUI()
 
-  const materialSelectorRef = useOutsideClick(closeMaterialSelector)
+  const materialSelectorRef =
+    useOutsideClick < HTMLDivElement>(closeMaterialSelector)
 
   const onPrevClick = () => {
     const currentIndex = pointerMaterials.findIndex(

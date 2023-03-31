@@ -13,7 +13,8 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
-    'space-before-function-paren': ['off']
+    'space-before-function-paren': ['off'],
+    '@typescript-eslint/no-explicit-any': ['off']
   },
   settings: {
     react: {
